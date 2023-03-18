@@ -7,9 +7,26 @@ index번호로 0번이 첫번째이며 순서를 가진다
 # 배열 선언 방법
 1. 데이터 목록으로 배열 생성하기
 	자료형[] 변수명 = {데이터1, 데이터2, 데이터3..};
+
+2. new 키워드로 배열 생성하기
+1) 배열 변수 선언
+	자료형[] 변수명;
+	자료형 변수명[];
+
+2) 배열의 객체 생성
+	변수명 = new 자료형[크기];
+
+3) 배열값 초기화
   
+# 배열 데이터 변경하기
+	배열명[index] = 데이터;
+	
+# 배열의 길이(크기, 개수)
+	배열명.length
 */
 package contents;
+
+import java.util.Scanner;
 
 public class C01_Array {
 	public static void main(String[] args) {
@@ -41,5 +58,40 @@ public class C01_Array {
 		System.out.println("arr[1] = " + arr[1]);
 		arr[2] = arr[0] + arr[1];
 		System.out.println("arr[2] = " + arr[2]);
+
+		//배열 선언을 해놓고, 나중에 데이터 목록을 넣을 경우
+		int[] arr2;
+		arr2 = new int[] {10, 20, 30};
+		
+		/* 배열 선언하기2 */
+		System.out.println("=====배열 생성하기2=====");
+		int[] ref = new int[3]; //배열 선언
+		ref[0] = 10;
+		ref[1] = 20;
+		ref[2] = 30;
+		
+		//모든 배열값에 15를 더하고 값 출력하기
+		for (int i = 0; i < ref.length; i++) {
+			ref[i] += 15;
+		}
+		
+		for (int i = 0; i < ref.length; i++) {
+			System.out.println("ref["+i+"] = "+ ref[i]);
+		}
+		
+		/* 배열 입력받기 */
+		System.out.println("=====배열 입력받기=====");
+		Scanner sc = new Scanner(System.in);
+		int[] glory = new int[4];
+		for (int i = 0; i < glory.length; i++) {
+			System.out.print((i+1)+"번째 배열 입력: ");
+			glory[i] = sc.nextInt();
+		}
+			
+		System.out.print("입력받은 배열: ");
+		for (int i = 0; i < glory.length; i++) {
+			System.out.print(glory[i] + " ");
+		}
+
 	}
 }
