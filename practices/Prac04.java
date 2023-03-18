@@ -20,6 +20,31 @@ Q)	먼저 사용자로부터 메뉴 개수를 입력받고,
 */
 package practices;
 
-public class Prac04 {
+import java.util.Random;
+import java.util.Scanner;
 
+public class Prac04 {
+	public static void main(String[] args) throws InterruptedException {
+		Scanner sc = new Scanner(System.in);
+		Random rd = new Random();
+		
+		System.out.print("메뉴 개수 입력: ");
+		int length_array = sc.nextInt();
+		String[] menus = new String[length_array];
+		
+		for (int i = 0; i < menus.length; i++) {
+			System.out.print("메뉴: ");
+			menus[i] = sc.next();
+		}
+		
+//		for(String menu : menus) {
+//			System.out.print(menu + " ");
+//		}
+		
+		int select = rd.nextInt(length_array);
+		System.out.println("추첨중입니다...");
+		Thread.sleep(3000); //3초 대기
+		
+		System.out.println("추첨된 메뉴은 " + menus[select] + "입니다.");
+	}
 }
