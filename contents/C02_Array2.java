@@ -1,6 +1,6 @@
 package contents;
 
-public class C01_Array2 {
+public class C02_Array2 {
 	public static void main(String[] args) {
 		/* 실수 타입 배열 생성하기 */
 		double[] grade = {4.3, 3.7, 2.5, 3.3, 4.2, 4.0, 3.2};
